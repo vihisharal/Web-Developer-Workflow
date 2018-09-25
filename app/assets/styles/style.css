@@ -1,3 +1,12 @@
+$mycolor:#346787;
 *{
-    
+    margin: 0;
+}
+
+html{
+    columns: 80px;
+    background-color: $mycolor;
+    h1{
+        color: blue;
+    }
 }

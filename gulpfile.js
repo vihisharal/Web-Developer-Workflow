@@ -1,6 +1,9 @@
 var gulp = require('gulp'),
-watch =  require('gulp-watch');
-
+watch =  require('gulp-watch'),
+postcss=require('gulp-postcss'),
+autoprefixer=require('autoprefixer'),
+cssvars=require('postcss-simple-vars'),
+nested=require('postcss-nested');
 // run : gulp
 gulp.task('default', function () {
     console.log('created gulp task.');
@@ -13,7 +16,9 @@ gulp.task('myHtml', function () {
 
 // run : gulp myhtml 
 gulp.task('myCss', function () {
-    console.log('do some css handling process.');
+    return gulp.src('app/assets/styles/style.css')
+    .pipe(postcss([cssvars,nested, autoprefixer]))
+    .pipe(gulp.dest('app/styles'));
 });
 
 // run : gulp mywatch 
@@ -25,3 +30,5 @@ gulp.task('mywatch', function () {
         gulp.start('myCss');
     });
 });
+
+// Video 04 > 12 apply
