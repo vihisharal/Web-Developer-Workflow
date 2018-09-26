@@ -1,12 +1,5 @@
-$mycolor:#346787;
-*{
-    margin: 0;
-}
-
-html{
-    columns: 80px;
-    background-color: $mycolor;
-    h1{
-        color: blue;
-    }
-}
+@import "normalize.css";
+@import "base/_variables";
+@import "base/_global";
+@import "modules/_large-hero";
+@import "modules/_btn";
