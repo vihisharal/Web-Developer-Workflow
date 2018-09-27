@@ -44,6 +44,14 @@
             font-weight: 500;
         }
 
+        &-blue{
+            color:$c-primary;
+            & img {
+                position: relative;
+                top: 1.5rem;
+            }
+        }
+
         &--icon {
             width: 4rem;
             margin-left: auto;

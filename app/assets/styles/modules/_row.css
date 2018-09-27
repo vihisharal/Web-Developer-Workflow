@@ -8,6 +8,10 @@
             margin-bottom: 0;
         }
 
+        &__padding-t{
+            padding: 80px;
+        }
+
         &__6-of-12{
             float: left;
             width: 50%;
@@ -40,6 +44,23 @@
             & > div{
                 padding-right: 100px;
             }
+        }
+        &--small{
+            margin-right: -45px;
+            & > div{
+                padding-right: 45px;
+            }
+
+        }
+    }
+
+    &__equal-height-4-of-12{
+        @mixin atMedium{
+            display: flex; 
+        }
+        & > div {
+            float: none;
+            display: flex;
         }
     }
 }
