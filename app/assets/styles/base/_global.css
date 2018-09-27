@@ -1,9 +1,21 @@
 body {
     font-family: 'Roboto',sans-serif;
 }
-
 img {
     width: 100%;
     height: auto;
 }
 
+/* to clear float unwanted behaviour */
+.clear-fix{
+    clear: both;
+}
+
+*{
+    box-sizing :border-box;
+}
+
+a{
+    color: $c-org;
+    text-decoration: none;
+}
