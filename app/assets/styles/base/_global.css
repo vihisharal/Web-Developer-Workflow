@@ -14,8 +14,6 @@ img {
 *{
     box-sizing :border-box;
 }
-
 a{
     color: $c-org;
-    text-decoration: none;
 }
