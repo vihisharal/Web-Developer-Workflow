@@ -470,6 +470,10 @@ img {
             box-sizing :border-box;
 }
 
+a{
+    color: rgb(255, 192, 75);
+}
+
 .large-hero{
     border-bottom: 10px solid #2f5572;
     position: relative;
@@ -562,7 +566,7 @@ img {
 .wrapper{
     padding-left: 18px;
     padding-right: 18px;
-    max-width: 1200px;
+    max-width: 1236px;
     margin-right: auto;
     margin-left: auto;
     overflow: hidden;
@@ -659,7 +663,19 @@ img {
         margin-top: 0;
     }
 
+.row__b-margin-until-medium{
+        margin-bottom: 1rem;
+    }
+
 @media(min-width: 800px) {
+        .row__b-margin-until-medium{
+            margin-bottom: 0;
+        }
+
+        .row__6-of-12{
+            float: left;
+            width: 50%;
+        }
         .row__4-of-12{
             float: left;
             width: 33.33%;
@@ -691,7 +707,101 @@ img {
             padding-right: 65px;
         }
 
+.row--gutters-large{
+            margin-right: -100px;
+        }
+
+.row--gutters-large > div{
+                padding-right: 100px;
+            }
+
 .generic-content-container p{
         line-height: 1.65;
-        font-size:1.125rem;
+        margin :0 0 1.8rem 0;
+    }
+
+@media(min-width: 530px) {
+
+.generic-content-container p{
+            font-size:1.125rem
+    }
+    }
+
+.generic-content-container p a{
+        font-weight: 700;
+    }
+
+.feature__item {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+@media(min-width: 530px) {
+
+.feature__item {
+        padding-left: 94px
+}
+    }
+
+.feature__item--icon {
+        width: 4rem;
+        display: block;
+        margin: 0 auto;
+
+    }
+
+@media(min-width: 530px) {
+
+.feature__item--icon {
+            position: absolute;
+            left: 0
+
+    }
+    }
+
+.feature__item--title {
+        font-size: 1.6rem;
+        font-weight: 300;
+        margin-bottom: .8rem;
+        margin-top: .7em;
+        text-align: center;
+    }
+
+@media(min-width: 530px) {
+
+.feature__item--title {
+            margin-top: 1em;
+            font-size: 1.875rem;
+            text-align: left
+    }
+    }
+
+.feature__item--description {}
+
+.section--title {
+        font-size: 2.55rem;
+        font-weight: 300;
+        text-align: center;
+    }
+
+.section--title strong {
+            font-weight: 500;
+        }
+
+.section--title--icon {
+            width: 4rem;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            margin-bottom: .6rem;
+        }
+
+@media(min-width: 530px) {
+
+.section--title--icon {
+                margin-right: .5rem;
+                margin-left: 0;
+                margin-bottom: 0;
+                display: inline-block
+        }
     }
