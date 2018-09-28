@@ -946,3 +946,50 @@ a{
             margin-right: 1.4rem
     }
     }
+
+.header{
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(47,85,114,.3);
+    padding: 10px 0;
+}
+
+.header__btn-container{
+        float: right;
+    }
+
+.header__logo{
+        position: absolute;
+        top:0;
+        background-color: #2f5572;
+        padding: 25px 36px;
+    }
+
+.primary-nav--pull-right{
+        float: right;
+    }
+
+.primary-nav ul {
+        margin: 0;
+        padding: 0;
+    }
+
+.primary-nav ul::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+
+.primary-nav li{
+        list-style: none;
+        float: left;
+        padding-right: 20px;
+        padding-top: 12px;
+    }
+
+.primary-nav a{
+        color: #fff;
+        text-decoration: none;
+        font-weight: 300;
+    }
