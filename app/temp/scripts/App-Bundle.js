@@ -70,22 +70,13 @@
 "use strict";
 
 
-var _Person = __webpack_require__(1);
+var _mobileMenu = __webpack_require__(1);
 
-var _Person2 = _interopRequireDefault(_Person);
+var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var $ = __webpack_require__(2);
-//var Person=require('./modules/Person'); //node-way
-//es6 way  
-var vishal = new _Person2.default('vishal gavali', 'White');
-vishal.greet();
-
-var rahul = new _Person2.default('rahul gavali', 'all');
-rahul.greet();
-
-$('h1').remove();
+var mobileMenu = new _mobileMenu2.default();
 
 /***/ }),
 /* 1 */
@@ -100,36 +91,44 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+var _jquery = __webpack_require__(2);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function PersonOldWay(name, color) {
-    this.greet = function () {
-        console.log("Hello I'm " + this.name + " and favorate color is " + this.color);
-    };
-}
+var MobileMenu = function () {
+    function MobileMenu() {
+        _classCallCheck(this, MobileMenu);
 
-var Person = function () {
-    function Person(name, thing) {
-        _classCallCheck(this, Person);
-
-        this.name = name;
-        this.thing = thing;
+        this.siteHeader = (0, _jquery2.default)('header');
+        this.menuIcon = (0, _jquery2.default)('.header__menu-icon');
+        this.menuContent = (0, _jquery2.default)('.header__menu-content');
+        this.events();
     }
 
-    _createClass(Person, [{
-        key: "greet",
-        value: function greet() {
-            console.log("Hello I'm " + this.name + " and things is " + this.thing);
+    _createClass(MobileMenu, [{
+        key: 'events',
+        value: function events() {
+            this.menuIcon.click(this.toggleMenu.bind(this));
         }
+    }, {
+        key: 'toggleMenu',
+        value: function toggleMenu() {
+            this.menuContent.toggleClass('header__menu-content--is-visible');
+            this.siteHeader.toggleClass('header--is-expanded');
+        }
+    }, {
+        key: 'menuContent',
+        value: function menuContent() {}
     }]);
 
-    return Person;
+    return MobileMenu;
 }();
 
-//module.exports =Person;//node-way
-
-
-exports.default = Person;
+exports.default = MobileMenu;
 
 /***/ }),
 /* 2 */
