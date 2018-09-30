@@ -1,7 +1,7 @@
-var Person=require('./modules/Person');
 var $ = require('jquery');
-
-var vishal =new Person('vishal gavali','unknown');
+//var Person=require('./modules/Person'); //node-way
+import Person from './modules/Person';//es6 way  
+var vishal =new Person('vishal gavali','White');
 vishal.greet();
 
 var rahul =new Person('rahul gavali','all');

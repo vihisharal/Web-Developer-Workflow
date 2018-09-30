@@ -67,31 +67,69 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Person=__webpack_require__(1);
-var $ = __webpack_require__(2);
+"use strict";
 
-var vishal =new Person('vishal gavali','unknown');
+
+var _Person = __webpack_require__(1);
+
+var _Person2 = _interopRequireDefault(_Person);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var $ = __webpack_require__(2);
+//var Person=require('./modules/Person'); //node-way
+//es6 way  
+var vishal = new _Person2.default('vishal gavali', 'White');
 vishal.greet();
 
-var rahul =new Person('rahul gavali','all');
+var rahul = new _Person2.default('rahul gavali', 'all');
 rahul.greet();
 
 $('h1').remove();
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 
 
-function Person(name,color){
-    this.name =name;
-    this.color =color;
-    this.greet = function(){
-        console.log("Hello I'm "+this.name+" and favorate color is "+this.color );
-    }
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function PersonOldWay(name, color) {
+    this.greet = function () {
+        console.log("Hello I'm " + this.name + " and favorate color is " + this.color);
+    };
 }
-module.exports =Person;
 
+var Person = function () {
+    function Person(name, thing) {
+        _classCallCheck(this, Person);
+
+        this.name = name;
+        this.thing = thing;
+    }
+
+    _createClass(Person, [{
+        key: "greet",
+        value: function greet() {
+            console.log("Hello I'm " + this.name + " and things is " + this.thing);
+        }
+    }]);
+
+    return Person;
+}();
+
+//module.exports =Person;//node-way
+
+
+exports.default = Person;
 
 /***/ }),
 /* 2 */
@@ -10355,3 +10393,4 @@ return jQuery;
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=App-Bundle.js.map
