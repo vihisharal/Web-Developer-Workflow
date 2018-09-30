@@ -850,6 +850,16 @@ a{
         text-align: center;
     }
 
+.section--title-head{
+            border-bottom: 1px solid #fff;
+        }
+
+@media(min-width: 800px) {
+            .section--title-head{
+                border-bottom: none;
+            }
+    }
+
 .section--title strong {
             font-weight: 500;
         }
