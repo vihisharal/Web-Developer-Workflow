@@ -26,9 +26,19 @@ gulp.task('mywatch', function () {
         gulp.start('cssInject');
         browserSync.reload();
     });
+
+    //watch changes in javascript and handover controll to webpack
+    watch('app/assets/scripts/**/*.js',function(){
+        gulp.start('scriptsRefresh');
+        
+    });
 });
 // use myCss task before cssInject run
 gulp.task('cssInject',['myCss'],function(){
     return gulp.src('/app/assets/styles/style.css')
     .pipe(browserSync.stream());
+});
+
+gulp.task('scriptsRefresh',['scripts'],function(){
+    browserSync.reload();
 });
