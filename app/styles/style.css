@@ -1209,6 +1209,13 @@ a{
     }
     }
 
+@media(min-width: 800px) {
+
+.primary-nav a.is-current-link{
+                color: rgb(255, 192, 75)
+        }
+    }
+
 .reveal-item{
     opacity: 0;
     -webkit-transition:  all 1.5s ease-out;

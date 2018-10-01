@@ -45,5 +45,10 @@
             font-size: 1rem;
             background-color: transparent;
         }
+        &.is-current-link{
+            @mixin atMedium{
+                color: $c-org;
+            }
+        }
     }
 }
