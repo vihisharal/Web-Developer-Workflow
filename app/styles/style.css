@@ -1192,3 +1192,11 @@ a{
             background-color: transparent
     }
     }
+
+.reveal-item{
+    opacity: 0;
+}
+
+.reveal-item--is-visible{
+        opacity: 1;
+    }
