@@ -11,7 +11,15 @@
 
     @mixin atMedium {
         background-color: rgba($c-primary, .3);
+        position:fixed;
+            
     }
+    &--dark{
+        @mixin atMedium {
+            background-color: rgba($c-primary, .9);
+        }
+    }
+
 
     &__btn-container {
         @mixin atMedium {
@@ -25,13 +33,16 @@
         background-color: $c-primary;
         padding: 25px 36px;
         left: 50%;
+        transition: transform .3s ease-out;
         transform: translateX(-50%) scale(.8);
         transform-origin: 50% 0;
 
         @mixin atMedium {
             left: auto;
             transform: translateX(0);
-
+            .header--dark &{
+                transform :scale(.55);
+            }
         }
     }
 
