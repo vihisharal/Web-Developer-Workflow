@@ -41,6 +41,10 @@
         font-weight: 300;
         text-align: center;
 
+        &--less-margin{
+            margin-bottom: 1.3rem;
+        }
+
         &-head{
             border-bottom: 1px solid #fff;
         }

@@ -11105,12 +11105,17 @@ var _stickyHeader = __webpack_require__(5);
 
 var _stickyHeader2 = _interopRequireDefault(_stickyHeader);
 
+var _model = __webpack_require__(7);
+
+var _model2 = _interopRequireDefault(_model);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var mobileMenu = new _mobileMenu2.default();
 new _revealOnScroll2.default('.feature__item', 'bottom-in-view');
 new _revealOnScroll2.default('.testimonials', '100%');
 new _stickyHeader2.default();
+new _model2.default();
 
 /***/ }),
 /* 3 */
@@ -11696,6 +11701,76 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 }));
 
 
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _jquery = __webpack_require__(0);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Model = function () {
+    function Model() {
+        _classCallCheck(this, Model);
+
+        this.openModelButton = (0, _jquery2.default)(".open-model");
+        this.model = (0, _jquery2.default)(".model");
+        this.modelCloseButton = (0, _jquery2.default)(".model__close");
+        this.events();
+    }
+
+    _createClass(Model, [{
+        key: "events",
+        value: function events() {
+            //clicking the open model button
+            this.openModelButton.click(this.openModel.bind(this));
+
+            // clicking the 'X' clode button
+            this.modelCloseButton.click(this.clodeModel.bind(this));
+
+            //pushes the escape key
+            (0, _jquery2.default)(document).keyup(this.keyPressHandler.bind(this));
+        }
+    }, {
+        key: "keyPressHandler",
+        value: function keyPressHandler(e) {
+            if (e.keyCode == 27) {
+                //Esc press
+                this.clodeModel();
+            }
+        }
+    }, {
+        key: "openModel",
+        value: function openModel() {
+            this.model.addClass("model--is-visible");
+            return false;
+        }
+    }, {
+        key: "clodeModel",
+        value: function clodeModel() {
+            this.model.removeClass("model--is-visible");
+            return false;
+        }
+    }]);
+
+    return Model;
+}();
+
+exports.default = Model;
 
 /***/ })
 /******/ ]);
