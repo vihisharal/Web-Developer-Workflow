@@ -63,12 +63,57 @@
 
     &__menu-icon {
         width: 20px;
-        height: 20px;
-        background-color: #fff;
+        height: 19px;
         position: absolute;
         z-index: 10;
         top: 10px;
         right: 10px;
+
+        &__middle{
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            left: 0;
+            top:8px;
+            transition:all .1s ease-out;
+        }
+        &::before{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            left: 0;    
+            top:0;
+            transition:transform .3s ease-out;
+            
+        }
+        &::after{
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 3px;
+            background-color: #fff;
+            left: 0;    
+            bottom:0;
+            transition:transform .3s ease-out;
+        }
+
+        &--close-x{
+
+            .header__menu-icon__middle{
+                opacity: 0;
+                transform:scale(0);
+            }
+
+            &::before{
+                transform: translateY(8px) rotate(45deg);
+            }
+            &::after{
+                transform: translateY(-8px) rotate(135deg);
+            }
+        }
 
         @mixin atMedium {
             display: none;
