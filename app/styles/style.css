@@ -1313,10 +1313,10 @@ a{
 .social-icons__icon{
         background-color: rgb(255, 192, 75);
         display:inline-block;
-        margin: 0 5px 5px 5px;
+        margin: 0 5px 5px 0;
         padding: 5px;
         text-align: center;
-        width: 33%;
+        width: 23%;
     }
 
 @media(min-width: 800px) {
@@ -1328,14 +1328,14 @@ a{
     }
 
 .social-icons__icon img{
-            height: 70px;
-            width: 70px;          
+            height: 50px;
+            width: 50px;          
         }
 
 @media(min-width: 800px) {
 
 .social-icons__icon img{
-                width: 50px;
-                height: 50px          
+                width: 70px;
+                height: 70px          
         }
     }
